@@ -1,1 +1,1 @@
-# Create Web Application (Php Native) School-PPDB with Bootstrap.
+# Create Web Application (Php Native) PPDB with Bootstrap.
