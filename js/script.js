@@ -47,4 +47,7 @@
         yearRange: '1990:'+yearNow
     });
 
+
+    // DataTables Searching and Pagination
+    $('.table').DataTable();
 })();

@@ -6,10 +6,10 @@ $ppdb = query("SELECT * FROM ppdb")
 <?php require 'templates/header.php'; ?>
 <div class="container mt-3">
     <h5 class="font-weight-bold">Pengumuman</h5>
-    <form class="form-inline mt-3 mb-3">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pencarian..." aria-label="Search">
+    <!-- <form action="" method="get" class="form-inline mt-3 mb-3">
+        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Pencarian..." aria-label="Search">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Cari!</button>
-    </form>
+    </form> -->
     <table class="table">
         <thead class="thead-light">
             <tr>

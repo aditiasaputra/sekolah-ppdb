@@ -63,7 +63,7 @@
 
     <!--==========================
     Intro Section
-  ============================-->
+    ============================-->
     <section id="intro" class="clearfix">
         <div class="container">
 
@@ -85,7 +85,7 @@
     <main id="main">
 
         <!--==========================
-      About Us Section
+    About Us Section
     ============================-->
         <section id="about">
             <div class="container">

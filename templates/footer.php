@@ -67,7 +67,11 @@
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery.ui.datepicker-id.min.js"></script>
-        
+
+        <!-- DataTables -->
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
         <!-- Contact Form JavaScript File -->
         <script src="contactform/contactform.js"></script>
 
