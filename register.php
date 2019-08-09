@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Register</title>
+  <title>Register</title>
 
   <!-- Custom fonts for this template-->
   <link href="css/all.css" rel="stylesheet" type="text/css">
@@ -58,14 +58,7 @@
                   Register Account
                 </a>
                 <hr>
-                <a href="index.php" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Register with Google
-                </a>
-                <a href="index.php" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                </a>
               </form>
-              <hr>
               <div class="text-center">
                 <a class="small" href="forgot-password.php">Forgot Password?</a>
               </div>

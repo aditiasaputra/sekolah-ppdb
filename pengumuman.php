@@ -1,7 +1,6 @@
 <?php require 'functions.php'; 
-$ppdb = query("SELECT * FROM ppdb")
-
-;?>
+$ppdb = query("SELECT * FROM ppdb");
+?>
 
 <?php require 'templates/header.php'; ?>
 <div class="container mt-3">

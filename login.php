@@ -1,3 +1,29 @@
+<?php
+require 'functions.php';
+
+if (isset($_POST['login'])) {
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
+
+    if (mysqli_num_rows($result) > 0) {
+        $data = mysqli_fetch_assoc($result);
+
+        if ($data['level'] == 'admin') {
+            $_SESSION['username'] = $username;
+            $_SESSION['level'] = 'admin';
+            header("location: dashboard/index.php");
+
+        } else if ($data['level']  == 'guru') {
+            echo "<script>alert('Mohon maaf, Halaman Untuk Guru belum dibuat')</script>";
+        }
+    } else {
+        echo "<script>alert('Anda bukan Admin ataupun Guru!')</script>";
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +35,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="css/all.css" rel="stylesheet" type="text/css">
@@ -20,7 +46,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-light">
 
     <div class="container">
 
@@ -39,12 +65,11 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form action="login.php" method="post" class="user formlogin">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            <input type="text" class="form-control form-control-user" id="userName" placeholder="Username" name="username" required>
+                                            <br>
+                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -52,18 +77,9 @@
                                                 <label class="custom-control-label" for="customCheck">Remember Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.php" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <input name="login" id="" class="btn btn-primary btn-user btn-block" type="submit" value="Login">
                                         <hr>
-                                        <a href="index.php" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.php" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
                                     </form>
-                                    <hr>
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.php">Forgot Password?</a>
                                     </div>
@@ -92,6 +108,19 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script>
+        // Pesan pada field input login, register, dan forgot password
+        $('.formlogin .form-group input').on('change invalid', function() {
+            var textField = $(this).get(0);
+            var placeHolder = $(this).attr('placeholder');
+
+            textField.setCustomValidity('');
+
+            if (!textField.validity.valid) {
+                textField.setCustomValidity(placeHolder + " tidak boleh kosong!");
+            }
+        });
+    </script>
 
 </body>
 

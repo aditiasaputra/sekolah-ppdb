@@ -1,4 +1,5 @@
 <?php
+session_start();
 $koneksi = mysqli_connect("localhost", "root", "", "db_sekolah");
 
 function query($query){
