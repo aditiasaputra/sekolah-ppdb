@@ -152,4 +152,7 @@ if (isset($_POST['submit'])) {
     </div>
 </div>
 <!-- END FORMULIR -->
+
+<!-- Preloader -->
+<div id="preloader"></div>
 <?php require 'templates/footer.php'; ?>

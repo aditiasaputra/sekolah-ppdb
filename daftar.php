@@ -32,5 +32,9 @@
         </div>
     </div>
 </div>
-    <!-- END DAFTAR -->
+<!-- END DAFTAR -->
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
 <?php require 'templates/footer.php'; ?>

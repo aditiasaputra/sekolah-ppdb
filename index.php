@@ -24,26 +24,18 @@
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-    Theme Name: NewBiz
-    Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
 </head>
 
 <body>
 
     <!--==========================
-  Header
-  ============================-->
+    Header
+    ============================-->
     <header id="header" class="fixed-top">
         <div class="container">
 
             <div class="logo float-left">
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-                <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
+                <a href="index.php" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
             </div>
 
             <nav class="main-nav float-right d-none d-lg-block">
@@ -494,12 +486,7 @@
                 &copy; Copyright <strong>M-STUDIO</strong>. All Rights Reserved <strong>2019</strong>
             </div>
             <div class="credits">
-                <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
-        -->
+
                 Designed by <a href="https://m-studio.com/">M-STUDIO</a>
             </div>
         </div>
@@ -507,7 +494,7 @@
 
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- Uncomment below i you want to use a preloader -->
-    <!-- <div id="preloader"></div> -->
+    <div id="preloader"></div>
 
     <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>

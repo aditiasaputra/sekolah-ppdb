@@ -1,4 +1,4 @@
-<?php require 'functions.php'; 
+<?php require 'functions.php';
 $ppdb = query("SELECT * FROM ppdb");
 ?>
 
@@ -23,21 +23,24 @@ $ppdb = query("SELECT * FROM ppdb");
         </thead>
         <tbody>
             <?php $i = 1; ?>
-            <?php foreach($ppdb as $row) : ?>
-            <tr>
-                <th scope="row"><?= $i++; ?></th>
-                <td><?= $row['nama']; ?></td>
-                <td><?= $row['kelurahan']; ?></td>
-                <td><?= $row['kecamatan']; ?></td>
-                <td><?= $row['kota-kabupaten']; ?></td>
-                <td><?= $row['propinsi']; ?></td>
-                <td>
-                    <h5><span class="badge badge-success">DITERIMA</span></h5>
-                    <h5><span class="badge badge-danger">TIDAK DITERIMA</span></h5>
-                </td>
-            </tr>
+            <?php foreach ($ppdb as $row) : ?>
+                <tr>
+                    <th scope="row"><?= $i++; ?></th>
+                    <td><?= $row['nama']; ?></td>
+                    <td><?= $row['kelurahan']; ?></td>
+                    <td><?= $row['kecamatan']; ?></td>
+                    <td><?= $row['kota-kabupaten']; ?></td>
+                    <td><?= $row['propinsi']; ?></td>
+                    <td>
+                        <h5><span class="badge badge-success">DITERIMA</span></h5>
+                        <h5><span class="badge badge-danger">TIDAK DITERIMA</span></h5>
+                    </td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 </div>
+
+<!-- Preloader -->
+<div id="preloader"></div>
 <?php require 'templates/footer.php'; ?>

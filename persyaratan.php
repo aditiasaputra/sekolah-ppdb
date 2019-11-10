@@ -79,4 +79,7 @@ $jenisBiaya = [
     </div>
 </div>
 <!-- END PERSYARATAN -->
+
+<!-- Preloader -->
+<div id="preloader"></div>
 <?php require 'templates/footer.php'; ?>

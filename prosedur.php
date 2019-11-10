@@ -43,4 +43,7 @@
     </div>
 </div>
 <!-- END PROSEDUR -->
+
+<!-- Preloader -->
+<div id="preloader"></div>
 <?php require 'templates/footer.php'; ?>

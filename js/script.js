@@ -2,39 +2,51 @@
     $(document).ready(function () {
         $(window).on("scroll", function (e) {
             if ($(window).scrollTop() >= 50) {
-                $("#header").addClass("fixed-top header-scrolled")
+                $("#header").addClass("fixed-top header-scrolled");
             } else {
-                $("#header").removeClass("fixed-top header-scrolled")
+                $("#header").removeClass("fixed-top header-scrolled");
             }
         })
 
+        // $(document.createElement('div').attributes('id', 'preloader'))
         switch (window.location.pathname) {
             case '/ppdb/daftar.php':
-                $('.main-nav ul li:nth-child(1)').addClass('active')
+                $('.main-nav ul li:nth-child(1)').addClass('active');
                 // alert(window.location.href);
                 break;
             case '/ppdb/prosedur.php':
-                $('.main-nav ul li:nth-child(2)').addClass('active')
+                $('.main-nav ul li:nth-child(2)').addClass('active');
                 // alert(window.location.href)
                 break;
             case '/ppdb/persyaratan.php':
-                $('.main-nav ul li:nth-child(3)').addClass('active')
+                $('.main-nav ul li:nth-child(3)').addClass('active');
                 // alert(window.location.href)
                 break;
             case '/ppdb/formulir.php':
-                $('.main-nav ul li:nth-child(4)').addClass('active')
+                $('.main-nav ul li:nth-child(4)').addClass('active');
                 // alert(window.location.href)
                 break;
             case '/ppdb/pengumuman.php':
-                $('.main-nav ul li:nth-child(5)').addClass('active')
+                $('.main-nav ul li:nth-child(5)').addClass('active');
                 // alert(window.location.href)
                 break;
             case '/ppdb/login.php':
-                $('.main-nav ul li:nth-child(6)').addClass('active')
+                $('.main-nav ul li:nth-child(6)').addClass('active');
                 // alert(window.location.href)
                 break;
         }
     })
+
+    // Preloader
+    // Preloader (if the #preloader div exists)
+    $(window).on('load', function () {
+        if ($('#preloader').length) {
+            $('#preloader').delay(100).fadeOut('slow', function () {
+                $(this).remove();
+            });
+        }
+    });
+
     // Tanggal Lahir
     var date = new Date();
     var yearNow = date.getFullYear();
