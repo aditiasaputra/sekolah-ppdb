@@ -1,3 +1,23 @@
+<?php
+require '../functions.php';
+
+if (isset($_POST['username'])) {
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
+  // cek username
+  if (mysqli_num_rows($result) === 1) {
+    // cek password
+    $row = mysqli_fetch_assoc($result);
+    if (password_verify($password, $row["password"])) {
+      header("Location: index.php");
+      exit;
+    }
+  }
+  // $error = true;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +30,7 @@
   <meta name="author" content="">
 
   <title>Dashboard</title>
+
 
   <!-- Custom fonts for this template-->
   <link href="../css/all.css" rel="stylesheet" type="text/css">
@@ -375,7 +396,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="../logout.php">Logout</a>
         </div>
       </div>
     </div>
@@ -386,7 +407,7 @@
   <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../lib/easing/easing.min.js"></script>  
+  <script src="../lib/easing/easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="../js/sb-admin-2.min.js"></script>
