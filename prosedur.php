@@ -1,4 +1,4 @@
-<?php require 'templates/header.php'; ?>
+<?php require 'templates/frontend/header.php'; ?>
 <!-- START PROSEDUR -->
 <div class="container mt-5">
     <div class="row">
@@ -46,4 +46,4 @@
 
 <!-- Preloader -->
 <div id="preloader"></div>
-<?php require 'templates/footer.php'; ?>
+<?php require 'templates/frontend/footer.php'; ?>

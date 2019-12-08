@@ -1,8 +1,9 @@
-<?php require 'functions.php';
+<?php
+require 'functions.php';
 $ppdb = query("SELECT * FROM ppdb");
 ?>
 
-<?php require 'templates/header.php'; ?>
+<?php require 'templates/frontend/header.php'; ?>
 <div class="container mt-3">
     <h5 class="font-weight-bold">Pengumuman</h5>
     <!-- <form action="" method="get" class="form-inline mt-3 mb-3">
@@ -43,4 +44,4 @@ $ppdb = query("SELECT * FROM ppdb");
 
 <!-- Preloader -->
 <div id="preloader"></div>
-<?php require 'templates/footer.php'; ?>
+<?php require 'templates/frontend/footer.php'; ?>

@@ -1,10 +1,10 @@
-<?php require '../templates/backend/header.php';?>
+<?php require '../templates/backend/header.php'; ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
-  
+
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Isi Content Dashboard</h1>
+    <h1 class="h3 mb-0 text-gray-800">Data Petugas</h1>
   </div>
 </div>
 <!-- /.container-fluid -->
@@ -12,4 +12,4 @@
 </div>
 <!-- End of Main Content -->
 
-<?php require '../templates/backend/footer.php';?>
+<?php require '../templates/backend/footer.php'; ?>

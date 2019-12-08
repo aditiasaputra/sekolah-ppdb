@@ -1,25 +1,28 @@
 <?php
+// session_start();
 require 'functions.php';
 
 if (isset($_POST['login'])) {
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-
-    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
-
-    if (mysqli_num_rows($result) > 0) {
-        $data = mysqli_fetch_assoc($result);
-
-        if ($data['level'] == 'admin') {
+    // var_dump($_POST);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    $result = mysqli_query($koneksi, "SELECT * FROM users WHERE username = '$username'");
+    // var_dump($result);
+    if (mysqli_num_rows($result) === 1) {
+        // cek password
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row["password"])) {
+            session_start();
+            $_SESSION['login'] = true;
             $_SESSION['username'] = $username;
-            $_SESSION['level'] = 'admin';
-            header("location: dashboard/index.php");
-
-        } else if ($data['level']  == 'guru') {
-            echo "<script>alert('Mohon maaf, Halaman Untuk Guru belum dibuat')</script>";
+            header("Location: dashboard/index.php");
+            exit;
+        } else {
+            echo '<script>alert("Username atau Password salah. Coba kembali!")</script>';
         }
     } else {
-        echo "<script>alert('Anda bukan Admin ataupun Guru!')</script>";
+        echo "<script>alert('User tidak dikenal. Harap isi dengan benar!')</script>";
     }
 }
 
@@ -46,7 +49,7 @@ if (isset($_POST['login'])) {
 
 </head>
 
-<body class="bg-gradient-light">
+<body class="bg-gradient-primary">
 
     <div class="container">
 
@@ -63,9 +66,9 @@ if (isset($_POST['login'])) {
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
                                     </div>
-                                    <form action="login.php" method="post" class="user formlogin">
+                                    <form action="" method="post" class="user formlogin">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="userName" placeholder="Username" name="username" required>
                                             <br>
@@ -74,17 +77,17 @@ if (isset($_POST['login'])) {
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember Me</label>
+                                                <label class="custom-control-label" for="customCheck">Ingat Saya</label>
                                             </div>
                                         </div>
                                         <input name="login" id="" class="btn btn-primary btn-user btn-block" type="submit" value="Login">
                                         <hr>
                                     </form>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.php">Forgot Password?</a>
+                                        <a class="small" href="lupa_password.php">Lupa Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.php">Create an Account!</a>
+                                        <a class="small" href="registrasi.php">Buat Akun!</a>
                                     </div>
                                 </div>
                             </div>

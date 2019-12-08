@@ -1,15 +1,15 @@
 <?php require 'functions.php'; ?>
 <?php
 if (isset($_POST['submit'])) {
-    if (tambah($_POST)) {
+    if (tambah($_POST) > 0) {
         echo "<script>
-        alert('Data Berhasil Dtambahkan!')
+        alert('Data Berhasil Ditambahkan!')
         document.location.href = 'daftar.php';
         </script>";
     }
 }
 ?>
-<?php require 'templates/header.php'; ?>
+<?php require 'templates/frontend/header.php'; ?>
 <!-- START FORMULIR -->
 <div class="datepicker"></div>
 <div class="container mt-5">
