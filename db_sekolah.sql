@@ -28,44 +28,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `ppdb`
 --
 
-<<<<<<< HEAD
-CREATE TABLE `ppdb`
-(
-  `id` int
-(11) NOT NULL,
-  `nama` varchar
-(255) NOT NULL,
-  `nisn` char
-(10) NOT NULL,
-  `tempat` varchar
-(255) NOT NULL,
-  `tanggal` char
-(50) NOT NULL,
-  `jenis-kelamin` char
-(50) NOT NULL,
-  `agama` char
-(50) NOT NULL,
-  `kewarganegaraan` char
-(50) NOT NULL,
-  `alamat` varchar
-(255) NOT NULL,
-  `rtrw` varchar
-(50) NOT NULL,
-  `kelurahan` varchar
-(50) NOT NULL,
-  `kecamatan` varchar
-(50) NOT NULL,
-  `kota-kabupaten` varchar
-(50) NOT NULL,
-  `propinsi` varchar
-(50) NOT NULL,
-  `kodepos` varchar
-(50) NOT NULL,
-  `handphone` char
-(12) NOT NULL,
-  `email` varchar
-(50) NOT NULL
-=======
 CREATE TABLE `ppdb` (
   `id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
@@ -84,30 +46,14 @@ CREATE TABLE `ppdb` (
   `kodepos` varchar(50) NOT NULL,
   `handphone` char(12) NOT NULL,
   `email` varchar(50) NOT NULL
->>>>>>> 2dff8442023e38b05b53f03ffb98e9afb7241182
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ppdb`
 --
 
-<<<<<<< HEAD
-INSERT INTO `ppdb` (`
-id`,
-`nama`,
-`nisn`,
-`tempat`,
-`tanggal`,
-`jenis-kelamin`,
-`agama`,
-`kewarganegaraan`,
-`alamat
-`, `rtrw`, `kelurahan`, `kecamatan`, `kota-kabupaten`, `propinsi`, `kodepos`, `handphone`, `email`) VALUES
-(1, 'Muhamad Aditia Saputra', '1139114', 'Jakarta', '24 Maret 1996', 'Laki-laki', 'Islam', 'Indonesia', 'Jl Rawa Kuning', '02/07', 'Pulogebang', 'Cakung', 'Jakarta Timur', 'DKI Jakarta', '13950', '089666096240', 'aditiasaputra@gmail.com'),
-=======
 INSERT INTO `ppdb` (`id`, `nama`, `nisn`, `tempat`, `tanggal`, `jenis-kelamin`, `agama`, `kewarganegaraan`, `alamat`, `rtrw`, `kelurahan`, `kecamatan`, `kota-kabupaten`, `propinsi`, `kodepos`, `handphone`, `email`) VALUES
 (1, 'Muhamad Aditia Saputra', '1139114', 'Jakarta', '24 Maret 1996', 'Laki-laki', 'Islam', 'Indonesia', 'Jl Rawa Kuning', '02/07', 'Pulogebang', 'Cakung', 'Jakarta Timur', 'DKI Jakarta', '13950', '089666096240', 'aditiasaputra24@gmail.com'),
->>>>>>> 2dff8442023e38b05b53f03ffb98e9afb7241182
 (2, 'Yunita Aulia Hasma', '1140500', 'Medan', '30 Juni1996', 'Perempuan', 'Islam', 'Indonesia', 'Jl Rawa Bebek', '04/10', 'Pulogebang', 'Cakung', 'Jakarta Timur', 'DKI Jakarta', '13950', '087788662211', 'yunita.aulia30@yahoo.co.id'),
 (3, 'Dedi Apriyadi', '1210050', 'Bandung', '12 September 1996', 'Laki-laki', 'Islam', 'Indonesia', 'Jl Raya Pulogebang', '12/10', 'Pulogebang', 'Cakung', 'Jakarta Timur', 'DKI Jakarta', '13950', '081255221166', 'dediapriyadi12@rocketmail.com'),
 (4, 'Putri Wulandari', '1302020', 'Jakarta', '08 Mei 1996', 'Perempuan', 'Islam', 'Indonesia', 'Jl Raya Komarudin', '11/02', 'Pulogebang', 'Cakung', 'Jakarta Timur', 'DKI Jakarta', '13950', '081345002000', 'putriwulandari08@gmail.com'),
