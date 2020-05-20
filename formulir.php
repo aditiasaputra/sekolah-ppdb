@@ -3,7 +3,7 @@
 if (isset($_POST['submit'])) {
     if (tambah($_POST)) {
         echo "<script>
-        alert('Data Berhasil Dtambahkan!')
+        alert('Data Berhasil Ditambahkan!')
         document.location.href = 'daftar.php';
         </script>";
     }

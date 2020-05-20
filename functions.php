@@ -1,5 +1,4 @@
 <?php
-session_start();
 $koneksi = mysqli_connect("localhost", "root", "", "db_sekolah");
 
 function query($query){
@@ -42,6 +41,44 @@ function tambah($data) {
                 VALUES
             ('', '$asalSekolah', '$alamatSekolah', '$nilaiUn')";
     
+    mysqli_multi_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+
+function registrasi($data)
+{
+    global $koneksi;
+
+    $nama = htmlspecialchars($data['nama']);
+    $email = htmlspecialchars($data["email"]);
+    $username = strtolower(stripslashes($data["username"]));
+    $password = mysqli_real_escape_string($koneksi, $data["password"]);
+    $passwordUlang = mysqli_real_escape_string($koneksi, $data["password_ulang"]);
+    $level = htmlspecialchars($data["level"]);
+
+    // cek username sudah ada atau belum
+    $result = mysqli_query($koneksi, "SELECT username FROM user WHERE username = '$username'");
+    if (mysqli_fetch_assoc($result)) {
+        echo "<script>
+				alert('Akun sudah terdaftar!. Harap coba lagi!');
+            </script>";
+        return false;
+    }
+    
+    if ($password != $passwordUlang) {
+        echo "<script>
+                alert('Password anda salah!');
+            </script>";
+        return false;
+    }
+
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    $query = "INSERT INTO user 
+            VALUES
+        ('', $nama, $email, $username, $password, $level);";
+
     mysqli_multi_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
