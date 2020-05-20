@@ -2,10 +2,10 @@
 require 'functions.php';
 
 if (isset($_POST['registrasi'])) {
-    if (registrasi($_POST)) {
+    if (registrasi($_POST) > 0) {
         echo "<script>
         alert('Data Anggota Berhasil Ditambahkan!. Silahkan Anda Login!');
-        // document.location.href= 'login.php';
+        document.location.href= 'login.php';
         </script>";
     } else {
         echo mysqli_error($koneksi);

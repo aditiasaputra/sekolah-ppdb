@@ -1,4 +1,4 @@
-<?php require 'templates/header.php'; ?>
+<?php require 'templates/frontend/header.php'; ?>
 <?php
 $jenisBiaya = [
     "ikppdb" => ["Iuran Kegiatan PPDB(IKPPDB)", 300000, 300000],
@@ -82,4 +82,4 @@ $jenisBiaya = [
 
 <!-- Preloader -->
 <div id="preloader"></div>
-<?php require 'templates/footer.php'; ?>
+<<<<<<< HEAD <?php require 'templates/footer.php'; ?>=======<?php require 'templates/frontend/footer.php'; ?>>>>>>>> 2dff8442023e38b05b53f03ffb98e9afb7241182

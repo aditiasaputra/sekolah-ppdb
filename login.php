@@ -1,26 +1,28 @@
 <?php
+session_start();
 require 'functions.php';
 
 if (isset($_POST['login'])) {
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    // var_dump($_POST);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
-
-    if (mysqli_num_rows($result) > 0) {
-        $data = mysqli_fetch_assoc($result);
-        // var_dump($data['password']);
-        if ($data['level'] == 'admin') {
+    $result = mysqli_query($koneksi, "SELECT * FROM users WHERE username = '$username'");
+    // var_dump($result);
+    if (mysqli_num_rows($result) === 1) {
+        // cek password
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row["password"])) {
+            session_start();
+            $_SESSION['login'] = true;
             $_SESSION['username'] = $username;
-            $_SESSION['level'] = 'admin';
-            header("location: dashboard/index.php");
-
-        } else if ($data['level']  == 'guru') {
-            echo "<script>alert('Mohon maaf, Halaman Untuk Guru belum dibuat')</script>";
+            header("Location: dashboard/index.php");
+            exit;
+        } else {
+            echo '<script>alert("Username atau Password salah. Coba kembali!")</script>';
         }
     } else {
-        echo "<script>alert('Anda bukan Admin ataupun Guru!')</script>";
-        // header("location: dashboard/index.php");
+        echo "<script>alert('User tidak dikenal. Harap isi dengan benar!')</script>";
     }
 }
 
@@ -64,7 +66,7 @@ if (isset($_POST['login'])) {
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang Kembali!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
                                     </div>
                                     <form action="" method="post" class="user formlogin">
                                         <div class="form-group">
